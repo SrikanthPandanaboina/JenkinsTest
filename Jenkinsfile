@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage ('Validate URL') {
             steps{
+                    sh ' chmod +x ./validateURI.sh '
                     sh ' ./validateURI.sh '  
             }
         }
@@ -12,6 +13,7 @@ pipeline {
                     expression { params.isSecure }
                 }
                 steps {
+                    sh ' chmod +x ./validateSSL.sh '
                     sh ' ./validateSSL.sh '  
                 }
         }
