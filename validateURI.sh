@@ -1,5 +1,6 @@
 #!/bin/sh
 echo "Testing URL: $URL"
+response=0
 echo $isSecure
 if [ "$isSecure" = true ]; then
   response=`curl -o /dev/null -s -w "%{http_code}\n" https://$URL`
