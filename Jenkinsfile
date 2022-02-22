@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage ('Validate URL') {
             steps{
+                    sh ' echo $URL '
                     sh ' chmod +x ./validateURI.sh '
                     sh ' ./validateURI.sh '  
             }
